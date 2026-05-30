@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy v1 - SYNTAXIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #222034;
+      --surface:   #2a2840;
+      --border:    #38354e;
+      --accent:    #feffbe;
+      --accent2:   #c8b86b;
+      --text:      #feffbe;
+      --muted:     #7e7a9a;
+      --heading:   #feffbe;
+      --mono:      'Share Tech Mono', monospace;
+      --sans:      'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* -- pixel grid overlay -- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(254,255,190,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(254,255,190,0.025) 1px, transparent 1px);
+      background-size: 8px 8px;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* -- header -- */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+    }
+
+    .game-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--heading);
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      color: var(--accent2);
+    }
+
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+    }
+
+    .version-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--bg);
+      background: var(--accent2);
+      padding: 0.2rem 0.55rem;
+      margin-top: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    /* -- layout -- */
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* -- sections -- */
+    section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: attr(data-n);
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    h3 {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--heading);
+      letter-spacing: 0.08em;
+      margin: 1.75rem 0 0.6rem;
+      opacity: 0.85;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(254,255,190,0.3);
+      transition: border-color 0.15s, opacity 0.15s;
+    }
+
+    a:hover {
+      opacity: 0.75;
+      border-color: var(--accent);
+    }
+
+    strong { color: var(--heading); font-weight: 500; opacity: 1; }
+
+    /* -- list -- */
+    ul {
+      list-style: none;
+      margin: 0.5rem 0 1rem;
+    }
+
+    ul li {
+      padding: 0.35rem 0 0.35rem 1.5rem;
+      position: relative;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    ul li::before {
+      content: '[+]';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.72em;
+      top: 0.5rem;
+    }
+
+    /* -- callout box -- */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 1.1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .callout p { margin-bottom: 0; opacity: 1; }
+
+    /* -- contact chip -- */
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.55rem 1rem;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      margin-top: 0.5rem;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .contact-chip:hover {
+      background: #30304a;
+      border-color: var(--accent2);
+      opacity: 1;
+    }
+
+    /* -- footer -- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* -- responsive -- */
+    @media (max-width: 540px) {
+      header { padding: 2rem 1.25rem 2rem; }
+      .wrapper { padding: 2rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="game-label">CanCat Games</p>
+  <h1>SYNTAX<span>IA</span></h1>
+  <p style="font-family:var(--mono);font-size:0.9rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.1em;">PRIVACY POLICY</p>
+  <div><span class="version-badge">v1 &mdash; May 2026</span></div>
+</header>
+
+<div class="wrapper">
+
+  <!-- 1 -->
+  <section>
+    <h2 data-n="01">Who We Are</h2>
+    <p>
+      SYNTAXIA is developed by <strong>CanCat Games</strong>, a two-person
+      indie studio based in Slovakia. If you have any questions about this policy, contact us at:
+    </p>
+    <a class="contact-chip" href="mailto:cancat.games@gmail.com">
+      &#9993;&nbsp; cancat.games@gmail.com
+    </a>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2 data-n="02">What This Policy Covers</h2>
+    <p>
+      This policy explains what data is collected when you play SYNTAXIA (the demo or any future release),
+      how it is used, and what choices you have. SYNTAXIA may be available on multiple platforms including
+      Steam, itch.io, CrazyGames, and other WebGL-compatible platforms.
+    </p>
+    <p>
+      This is policy version 1 (<strong>policy_v1</strong>), accessible via a link in the game and
+      on our store pages. If this policy is ever updated in a meaningful way, a new versioned policy
+      will be published and you will be asked for fresh consent in-game before any change takes effect.
+    </p>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2 data-n="03">Data We Collect</h2>
+
+    <h3>// Analytics and Crash Reporting (Unity)</h3>
+    <p>
+      If you give your consent at first launch, we collect anonymous gameplay and technical data through
+      Unity Analytics and Unity Cloud Diagnostics (crash reporting). This may include:
+    </p>
+    <ul>
+      <li>Session length and frequency</li>
+      <li>In-game events and actions (e.g. levels started, completed, failed)</li>
+      <li>Device type, operating system, and game version</li>
+      <li>Crash logs and error reports</li>
+    </ul>
+    <p>
+      This data is processed by Unity Technologies. You can read their privacy policy at
+      <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a>.
+    </p>
+    <div class="callout">
+      <p>
+        We do not collect analytics data unless you explicitly accept at first launch.
+        You can change this at any time in <strong>Settings &gt; Privacy</strong>.
+      </p>
+    </div>
+
+    <h3>// Community Statistics (PlayFab)</h3>
+    <p>
+      SYNTAXIA shows community statistics &mdash; for example, what percentage of players made the same
+      choice as you at key moments (similar to Detroit: Become Human or The Walking Dead).
+      These statistics are <strong>anonymous aggregate counters</strong>.
+      Your individual choice increments a counter; no personal data or player identifier is attached to it.
+    </p>
+    <p>
+      To support this feature, a randomly generated player ID is created locally on your device
+      (for example: <code style="font-family:var(--mono);color:var(--accent2);font-size:0.88em">itch_a3f9b2</code>
+      or <code style="font-family:var(--mono);color:var(--accent2);font-size:0.88em">steam_x7k2m1</code>).
+      This ID is not linked to your real identity, your Steam account, or any other personal information.
+      It is stored in Microsoft PlayFab solely to prevent duplicate contributions to statistics.
+    </p>
+    <div class="callout">
+      <p>
+        You can disable community statistics and delete your PlayFab profile at any time in
+        <strong>Settings &gt; Privacy</strong>. Deleting your profile removes the random ID from our
+        servers. Because statistics are anonymous counters, deletion does not subtract from
+        previously recorded totals.
+      </p>
+    </div>
+    <p>
+      PlayFab is operated by Microsoft. Their privacy information is available at
+      <a href="https://playfab.com/terms" target="_blank" rel="noopener">playfab.com/terms</a>.
+    </p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2 data-n="04">What We Do NOT Collect</h2>
+    <ul>
+      <li>Your name, email address, or any contact details</li>
+      <li>Your Steam ID or any platform account identifier</li>
+      <li>Payment or financial information</li>
+      <li>Location data</li>
+      <li>Any data from children under 13 &mdash; we do not knowingly collect it</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2 data-n="05">Legal Basis for Processing (GDPR)</h2>
+    <p>
+      CanCat Games is based in Slovakia, an EU member state. We process data in accordance with
+      the General Data Protection Regulation (GDPR).
+    </p>
+    <p>
+      <strong>Analytics and crash data</strong> &mdash; processed on the basis of your explicit consent
+      (Article 6(1)(a) GDPR). You may withdraw consent at any time without affecting any previous processing.
+    </p>
+    <p>
+      <strong>Community statistics</strong> &mdash; because no personal data is attached to these counters,
+      GDPR does not apply to them. We mention them here for full transparency.
+    </p>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2 data-n="06">Your Rights</h2>
+    <p>Under GDPR, you have the right to:</p>
+    <ul>
+      <li>Withdraw analytics consent at any time (Settings &gt; Privacy)</li>
+      <li>Request deletion of your PlayFab profile (Settings &gt; Privacy &gt; Delete my data)</li>
+      <li>Ask us what data we hold about you</li>
+      <li>
+        Lodge a complaint with the Slovak data protection authority (UOOU) at
+        <a href="https://www.uoou.sk" target="_blank" rel="noopener">uoou.sk</a>
+      </li>
+    </ul>
+    <p>
+      To exercise any right, contact us at
+      <a href="mailto:cancat.games@gmail.com">cancat.games@gmail.com</a>.
+      We will respond within 30 days.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2 data-n="07">Data Retention</h2>
+    <p>
+      Analytics data is retained by Unity according to their own data retention policy.
+    </p>
+    <p>
+      Your PlayFab random ID and associated data are retained until you request deletion via
+      Settings &gt; Privacy, or contact us directly.
+    </p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2 data-n="08">Third-Party Services</h2>
+    <p>SYNTAXIA uses the following third-party services, each with their own privacy policy:</p>
+    <ul>
+      <li>
+        <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Analytics &amp; Cloud Diagnostics</a>
+      </li>
+      <li>
+        <a href="https://playfab.com/terms" target="_blank" rel="noopener">Microsoft PlayFab</a>
+      </li>
+      <li>
+        <a href="https://store.steampowered.com/privacy_agreement" target="_blank" rel="noopener">Steam (Valve)</a>
+      </li>
+      <li>
+        <a href="https://itch.io/docs/legal/privacy-policy" target="_blank" rel="noopener">itch.io</a>
+      </li>
+      <li>
+        <a href="https://www.crazygames.com/privacy-policy" target="_blank" rel="noopener">CrazyGames</a>
+      </li>
+      <li>Other WebGL-compatible game platforms where SYNTAXIA may be published</li>
+    </ul>
+    <p>We do not sell your data to any third party.</p>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2 data-n="09">Future Game Versions</h2>
+    <p>
+      This policy covers SYNTAXIA and any future full release. We do not anticipate collecting any
+      data beyond what is described here. If a future version of the game (such as the full Steam
+      release) requires collecting additional data, a new versioned policy will be published and
+      fresh consent will be requested before any new collection begins.
+    </p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2 data-n="10">About This Document</h2>
+    <p>
+      This is <strong>policy_v1</strong>, published May 2026. It is accessible via a link in the
+      game's settings and on our store pages.
+    </p>
+    <p>
+      If this policy is ever superseded, the new version will be published under a new filename
+      (e.g. <code style="font-family:var(--mono);font-size:0.88em;color:var(--accent2)">policy_v2.html</code>)
+      and you will be asked for fresh consent in-game. This document itself will not be modified,
+      so any link pointing to it will always reflect exactly what you agreed to.
+    </p>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <h2 data-n="11">Contact</h2>
+    <p>CanCat Games &mdash; Slovakia</p>
+    <a class="contact-chip" href="mailto:cancat.games@gmail.com">
+      &#9993;&nbsp; cancat.games@gmail.com
+    </a>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2026 CanCat Games &nbsp;/&nbsp; SYNTAXIA &nbsp;/&nbsp; policy_v1
+</footer>
+
+</body>
+</html>
