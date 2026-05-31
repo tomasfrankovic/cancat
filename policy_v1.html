@@ -324,31 +324,32 @@
       </p>
     </div>
 
-    <h3>// Community Statistics (PlayFab)</h3>
+    <h3>// Community Statistics (Supabase)</h3>
     <p>
       SYNTAXIA shows community statistics &mdash; for example, what percentage of players made the same
       choice as you at key moments (similar to Detroit: Become Human or The Walking Dead).
       These statistics are <strong>anonymous aggregate counters</strong>.
-      Your individual choice increments a counter; no personal data or player identifier is attached to it.
+      Your individual choice increments a counter; no personal data is attached to it.
     </p>
     <p>
       To support this feature, a randomly generated player ID is created locally on your device
       (for example: <code style="font-family:var(--mono);color:var(--accent2);font-size:0.88em">itch_a3f9b2</code>
       or <code style="font-family:var(--mono);color:var(--accent2);font-size:0.88em">steam_x7k2m1</code>).
       This ID is not linked to your real identity, your Steam account, or any other personal information.
-      It is stored in Microsoft PlayFab solely to prevent duplicate contributions to statistics.
+      It is stored in our database solely to prevent duplicate contributions to statistics.
+      Our database is hosted in the EU (eu-west-1) via Supabase.
     </p>
     <div class="callout">
       <p>
-        You can disable community statistics and delete your PlayFab profile at any time in
-        <strong>Settings &gt; Privacy</strong>. Deleting your profile removes the random ID from our
-        servers. Because statistics are anonymous counters, deletion does not subtract from
-        previously recorded totals.
+        You can disable community statistics and delete your data at any time in
+        <strong>Settings &gt; Privacy</strong>. Deleting your data removes the random ID and
+        associated entries from our database. Because statistics are anonymous counters, deletion
+        does not subtract from previously recorded totals.
       </p>
     </div>
     <p>
-      PlayFab is operated by Microsoft. Their privacy information is available at
-      <a href="https://playfab.com/terms" target="_blank" rel="noopener">playfab.com/terms</a>.
+      Supabase privacy information is available at
+      <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.
     </p>
   </section>
 
@@ -376,8 +377,10 @@
       (Article 6(1)(a) GDPR). You may withdraw consent at any time without affecting any previous processing.
     </p>
     <p>
-      <strong>Community statistics</strong> &mdash; because no personal data is attached to these counters,
-      GDPR does not apply to them. We mention them here for full transparency.
+      <strong>Community statistics</strong> &mdash; processed on the basis of our legitimate interest
+      (Article 6(1)(f) GDPR) in understanding our player base. The only stored identifier is a
+      randomly generated player ID with no link to real identity. You can delete your data at
+      any time via Settings &gt; Privacy.
     </p>
   </section>
 
@@ -387,7 +390,7 @@
     <p>Under GDPR, you have the right to:</p>
     <ul>
       <li>Withdraw analytics consent at any time (Settings &gt; Privacy)</li>
-      <li>Request deletion of your PlayFab profile (Settings &gt; Privacy &gt; Delete my data)</li>
+      <li>Request deletion of your community statistics data (Settings &gt; Privacy &gt; Delete my data)</li>
       <li>Ask us what data we hold about you</li>
       <li>
         Lodge a complaint with the Slovak data protection authority (UOOU) at
@@ -415,8 +418,8 @@
       a removal request to Unity on your behalf.
     </p>
     <p>
-      Your PlayFab random ID and associated data are retained until you request deletion via
-      Settings &gt; Privacy, or contact us directly.
+      Your randomly generated player ID and associated statistics are retained in our Supabase
+      database until you request deletion via Settings &gt; Privacy, or contact us directly.
     </p>
   </section>
 
@@ -429,7 +432,7 @@
         <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Analytics &amp; Cloud Diagnostics</a>
       </li>
       <li>
-        <a href="https://playfab.com/terms" target="_blank" rel="noopener">Microsoft PlayFab</a>
+        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase (community statistics database, hosted in EU)</a>
       </li>
       <li>
         <a href="https://store.steampowered.com/privacy_agreement" target="_blank" rel="noopener">Steam (Valve)</a>
